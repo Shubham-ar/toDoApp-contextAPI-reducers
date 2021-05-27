@@ -42,3 +42,7 @@ form {
   background-color: darkgray;
   text-decoration: line-through;
 }
+
+.float-right{
+  float: right;
+}

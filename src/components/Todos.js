@@ -13,6 +13,14 @@ const Todos = () => {
             {todos.map(todo => (
                 <ListGroupItem key={todo.id}>
                     {todo.todoString}
+                    <span className="float-right" onClick={() => {
+                        dispatch({
+                            type: REMOVE_TODO,
+                            payload: todo.id
+                        })
+                    }}>
+                        <FaCheckDouble />
+                    </span>
                 </ListGroupItem>
             ))}
         </ListGroup>
