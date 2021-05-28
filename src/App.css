@@ -17,7 +17,7 @@ h1 {
 
 form {
   position: fixed;
-  top: 500px;
+  top: 15vh;
   right: 30%;
   left: 30%;
   border-radius: 8px;
@@ -28,7 +28,7 @@ form {
 
 .items {
   position: fixed;
-  top: 70px;
+  top: 25vh;
   right: 30%;
   left: 30%;
   border-radius: 8px;
