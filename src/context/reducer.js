@@ -8,6 +8,8 @@ export default (state, action) => {
     switch (action.type) {
         case ADD_TODO:
             return [...state, action.payload]
+        // [] represents an array, we are loading entire array like [0,1,2,3,4,action.payload]
+        // thus we are hardcoding the current payload value inside of the array
         // OBJECTIVE: Take todo string and add it to the state
         // load the values of the state and do action.payload
         // action is an object which consist of variety of things

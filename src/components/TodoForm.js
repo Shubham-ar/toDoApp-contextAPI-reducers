@@ -10,7 +10,7 @@ import {
 
 import { v4 } from "uuid"
 import { TodoContext } from "../context/TodoContext"
-import { ADD_TODO, REMOVE_TODO } from "../context/action.types"
+import { ADD_TODO} from "../context/action.types"
 
 
 // this file takes the value PROVIDED by the app.js of todo,dispatch (of useReducer) using context.
@@ -25,25 +25,32 @@ const TodoForm = () => {
     const { dispatch } = useContext(TodoContext);
 
     const handleSubmit = (e) => {
+        // to prevent the default clearing action of form submission
         e.preventDefault();
+        
+        // check to see if the container has no text inserted
         if (todoString === "") {
             return alert("Please enter Todo ")
         }
 
+        // creating a singular todo value to enter in dispatch, so as to make it inside of the state array
         const todo = {
             todoString,
             id: v4()
         }
+
+        // the dispatch function accepts an action object that contains the type of action to be invoked.
         dispatch({
             type: ADD_TODO,
             payload: todo
         })
+        
         setTodoString("")
     }
 
     return (
         <Form onSubmit={handleSubmit}>
-            <FormGroup>
+            <FormGroup >
                 <InputGroup>
                     <Input
                         type="text"
