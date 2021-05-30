@@ -13,6 +13,13 @@ import Todos from './components/Todos'
 
 const App = () => {
   const [todos, dispatch] = useReducer(todoReducer, []);
+  // useReducer accepts a reducer function as first parameter and initial state as second parameter.
+  // todos: array of current state value
+  // dispatch: function returned by useReducer
+  // useReducer returns an array which holds the current state value and a dispatch function to which you can pass an action and then invoke
+  // ACTION: an object that tells the reducer how to change state. 
+  // ACTION MUST CONTAIN 'type' and can contain 'payload' properties
+
   return (
     <TodoContext.Provider value={{ todos, dispatch }}>
       <Container fluid>
