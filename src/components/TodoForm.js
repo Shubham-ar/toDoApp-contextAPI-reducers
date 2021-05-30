@@ -12,12 +12,19 @@ import { v4 } from "uuid"
 import { TodoContext } from "../context/TodoContext"
 import { ADD_TODO, REMOVE_TODO } from "../context/action.types"
 
+
+// this file takes the value PROVIDED by the app.js of todo,dispatch (of useReducer) using context.
+// todos is the array of current state value
+// dispatch is the function returned by userReducer to which we can pass an action and then invoke
+
+
 const TodoForm = () => {
 
     const [todoString, setTodoString] = useState("");
+
     const { dispatch } = useContext(TodoContext);
 
-    const handleSubmit = e => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         if (todoString === "") {
             return alert("Please enter Todo ")

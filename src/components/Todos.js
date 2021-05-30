@@ -4,6 +4,10 @@ import { FaCheckDouble, } from "react-icons/fa"
 import { TodoContext } from "../context/TodoContext"
 import { REMOVE_TODO } from "../context/action.types"
 
+// this file takes the value PROVIDED by the app.js of todo,dispatch (of useReducer) using context.
+// todos is the array of current state value
+// dispatch is the function returned by userReducer to which we can pass an action and then invoke
+
 
 const Todos = () => {
     const { todos, dispatch } = useContext(TodoContext)
