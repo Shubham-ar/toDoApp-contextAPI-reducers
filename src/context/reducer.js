@@ -8,23 +8,23 @@ export default (state, action) => {
     switch (action.type) {
         case ADD_TODO:
             return [...state, action.payload]
-            // OBJECTIVE: Take todo string and add it to the state
-            // load the values of the state and do action.payload
-            // action is an object which consist of variety of things
-            // payload is the information that it carries with it
-            // in our case it carries a string
+        // OBJECTIVE: Take todo string and add it to the state
+        // load the values of the state and do action.payload
+        // action is an object which consist of variety of things
+        // payload is the information that it carries with it
+        // in our case it carries a string
 
         case REMOVE_TODO:
             return state.filter(todo => todo.id !== action.payload)
-            // state is iteratable
-            // filter allows us to pass on simple callback method.
-            // filter iterates through each and every todo and we are creating a new list of it
-            // all the values which evaluate to true are carried forward to the new array
-            // else they are dropped .
-            // search js filter array for more..
+        // state is iteratable
+        // filter allows us to pass on simple callback method.
+        // filter iterates through each and every todo and we are creating a new list of it
+        // all the values which evaluate to true are carried forward to the new array
+        // else they are dropped .
+        // search js filter array for more..
 
         default:
             return state;
-            // return state as it is , we need not do anything else.
+        // return state as it is , we need not do anything else.
     }
 }
